@@ -53,10 +53,7 @@ app.use(function(err, req, res, next) {
   }
 })
 
-const router = express.Router();
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-
-//Listen on port set in environment variable or default to 3000
-//const listener = app.listen(process.env.PORT || 3000, function () {
- // console.log("Node.js listening on port " + listener.address().port);
-//});
+// Listen on port set in environment variable or default to 3000
+const listener = app.listen(process.env.PORT || 3000, function () {
+  console.log("Node.js listening on port " + listener.address().port);
+});
